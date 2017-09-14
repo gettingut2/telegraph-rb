@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.telegra.ph/createAccount?author_name=test_author&author_url=http://author.com&short_name=test_name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.telegra.ph
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.6.2
+      Date:
+      - Sat, 09 Sep 2017 14:54:29 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '219'
+      Connection:
+      - keep-alive
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-store
+      Strict-Transport-Security:
+      - max-age=15768000
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":true,"result":{"short_name":"test_name","author_name":"test_author","author_url":"http:\/\/author.com\/","access_token":"b3557373fe3a2805a7d03b706da4b93aaca7e8c18e883cd0a5e7295afe9e","auth_url":"https:\/\/edit.telegra.ph\/auth\/LqDdj9tDGTechKOG8gndYmrIe5o7E2losXzL62mKTz"}}'
+    http_version: 
+  recorded_at: Sat, 09 Sep 2017 14:54:29 GMT
+recorded_with: VCR 3.0.3
