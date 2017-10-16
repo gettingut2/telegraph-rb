@@ -13,26 +13,34 @@ module Telegraph
 
     def get_without_encode(method, token, params)
       # Makes custom query GET request without params encoding.
-      uri = URI(BASE_URL + method + build_custom_query(token, params))
-      get_json_response(uri)
+      uri = URI(BASE_URL + method)
+      get_json_response(uri, token, params)
     end
 
     private
 
     def build_custom_query(token, params)
       # Builds custom query for #get_without_encode
-      p params.to_json
       additional_params = params.map do |k, v|
         if k.to_s == 'content'
-          v = v.to_json
+          v = URI.encode(v.to_json)
         end
         "#{k}=#{v}"
       end
       "?access_token=#{token}&#{additional_params.join('&')}"
     end
 
-    def get_json_response(uri)
-      response = Net::HTTP.get_response(uri)
+    def get_json_response(uri, token, params)
+      additional_params = params.map do |k, v|
+        if k.to_s == 'content'
+          v = v.to_json
+        end
+        "#{k}=#{v}"
+      end
+      params.delete(:content)
+      papa = additional_params[3].gsub('content=', '')
+      hsh = {access_token: token, content: papa}
+      response = Net::HTTP.post_form(uri, hsh.merge(params))
       JSON.parse(response.body)
     end
   end

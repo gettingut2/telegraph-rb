@@ -21,7 +21,10 @@ module Telegraph
     end
 
     def create_page(attrs = {})
-      get_without_encode('createPage', token, attrs)
+      attrs
+      p response = get_without_encode('createPage', token, attrs)
+      p page_attrs = response['result']
+      Page.new(page_attrs)
     end
   end
 end

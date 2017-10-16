@@ -1,4 +1,5 @@
 require 'net/http'
+require 'uri'
 require 'nokogiri'
 require 'JSON'
 require_relative 'telegraph/node_helper'
