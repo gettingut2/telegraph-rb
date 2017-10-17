@@ -2,11 +2,11 @@
 
 # using NodeHelper
 
-# # telegraph = Telegraph::Account.create do
-# #   short_name 'keka'
-# #   author_name 'kek'
-# #   author_url 'kek'
-# # end
+telegraph = Telegraph::Account.create do
+  short_name 'keka'
+  author_name 'kek'
+  author_url 'kek'
+end
 
 # telegraph = Telegraph.client('a24dbcafbd49a962e4a7f5842410afdb07e49f0f7ac108a3c68146e75ca5')
 

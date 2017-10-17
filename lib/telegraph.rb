@@ -1,4 +1,4 @@
-require 'net/http'
+require 'faraday'
 require 'uri'
 require 'nokogiri'
 require 'JSON'
@@ -10,8 +10,6 @@ require_relative 'telegraph/page'
 
 module Telegraph
   extend Telegraph::Connection
-
-  BASE_URL = 'https://api.telegra.ph/'
 
   def self.client(token)
     @client ||= Client.new(token)

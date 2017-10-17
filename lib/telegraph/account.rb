@@ -3,6 +3,7 @@ module Telegraph
     attr_reader :token, :short_name, :author_name, :auth_url, :author_url
 
     def initialize(attrs)
+      p attrs
       define_variables(attrs)
     end
 

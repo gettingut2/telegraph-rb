@@ -11,19 +11,18 @@ module Telegraph
     end
 
     def account
-      @account ||= Account.new(get_account_info['result'])
+      @account ||= Account.new(get_account_info)
     end
 
     def get_account_info(*fields)
       # Gets all available account information if 'fields' array not given.
       fields = AVAILABLE_FIELDS if fields.empty?
-      get_without_encode('getAccountInfo', token, fields: fields)
+      get('getAccountInfo', {fields: fields.to_s}, token: token)['result']
     end
 
     def create_page(attrs = {})
-      attrs
-      p response = get_without_encode('createPage', token, attrs)
-      p page_attrs = response['result']
+      response = get('createPage', attrs, token: token)
+      page_attrs = response
       Page.new(page_attrs)
     end
   end
