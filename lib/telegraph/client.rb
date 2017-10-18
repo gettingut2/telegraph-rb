@@ -17,13 +17,17 @@ module Telegraph
     def get_account_info(*fields)
       # Gets all available account information if 'fields' array not given.
       fields = AVAILABLE_FIELDS if fields.empty?
-      get('getAccountInfo', {fields: fields.to_s}, token: token)['result']
+      get('getAccountInfo', {fields: fields.to_s}, token: token)
+    end
+
+    def edit_account_info(attrs = {})
+      response = get('editAccountInfo', attrs, token: token)
     end
 
     def create_page(attrs = {})
       response = get('createPage', attrs, token: token)
-      page_attrs = response
-      Page.new(page_attrs)
+      check_errors(response)
+      Page.new(response)
     end
   end
 end

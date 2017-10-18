@@ -5,7 +5,9 @@ module Telegraph
 
     def get(method, params, token: nil)
       response = get_response(method, params, token)
-      JSON.parse(response.body)
+      resp_hash = JSON.parse(response.body)
+      check_errors(resp_hash)
+      resp_hash['result']
     end
 
     def connection
@@ -24,6 +26,10 @@ module Telegraph
         req.params.merge!(params)
         req.url(url)
       end
+    end
+
+    def check_errors(response)
+      raise ArgumentError, response['error'] if response['ok'] == false
     end
   end
 end
