@@ -2,19 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.telegra.ph/createAccount?author_name=test_author&author_url=http://author.com&short_name=test_name
+    uri: https://api.telegra.ph/createAccount?access_token=7d604ec10532362c5c8b46ebfdcfb524285cad59b9e7a3e6b30872ab47ca&author_name=test_author&author_url=http://author.com&short_name=test_name
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.12.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
-      Host:
-      - api.telegra.ph
   response:
     status:
       code: 200
@@ -23,11 +21,11 @@ http_interactions:
       Server:
       - nginx/1.6.2
       Date:
-      - Sat, 09 Sep 2017 14:55:19 GMT
+      - Wed, 18 Oct 2017 14:20:07 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '220'
+      - '225'
       Connection:
       - keep-alive
       Pragma:
@@ -38,7 +36,7 @@ http_interactions:
       - max-age=15768000
     body:
       encoding: ASCII-8BIT
-      string: '{"ok":true,"result":{"short_name":"test_name","author_name":"test_author","author_url":"http:\/\/author.com\/","access_token":"a7e58c54a80c4078f1e6537fbd593045d7f1dea981580441e7295b7dd694","auth_url":"https:\/\/edit.telegra.ph\/auth\/0ddjHIjR64TGs6m3TTIvjOpBOGRR7Cc7Nnou5Hj9Lc"}}'
+      string: '{"ok":true,"result":{"short_name":"test_name","author_name":"test_author","author_url":"http:\/\/author.com\/","access_token":"32b19f39673c57393e8527fe4d81a5d7a23ea338ac57e4a4e4193dd53c2e","auth_url":"https:\/\/edit.telegra.ph\/auth\/KBQLf0Hr9NkUCVODAJbqScMLjIB9N3xxFohSmYktLC"}}'
     http_version: 
-  recorded_at: Sat, 09 Sep 2017 14:55:19 GMT
+  recorded_at: Wed, 18 Oct 2017 14:20:07 GMT
 recorded_with: VCR 3.0.3

@@ -2,23 +2,30 @@ require 'faraday'
 require 'uri'
 require 'nokogiri'
 require 'JSON'
+require 'singleton'
 require_relative 'telegraph/node_helper'
 require_relative 'telegraph/connection'
 require_relative 'telegraph/client'
 require_relative 'telegraph/account'
 require_relative 'telegraph/page'
+require_relative 'telegraph/configuration'
 
 module Telegraph
-  extend Telegraph::Connection
+  def self.setup(token)
+    configuration.key = token
+    @client = Client.new(configuration.key)
+  end
 
-  def self.client(token)
-    @client ||= Client.new(token)
+  def self.client
+    @client ||= Client.new(configuration.key)
   end
 
   def self.create_account(attrs = {})
-    check_short_name(attrs)
-    response = get('createAccount', attrs)
-    Account.new(response['result'])
+    client.create_account(configuration, attrs)
+  end
+
+  def self.configuration
+    Configuration.instance
   end
 
   private

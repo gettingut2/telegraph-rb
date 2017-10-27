@@ -21,11 +21,11 @@ http_interactions:
       Server:
       - nginx/1.6.2
       Date:
-      - Wed, 18 Oct 2017 14:57:49 GMT
+      - Wed, 18 Oct 2017 15:21:43 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '164'
+      - '177'
       Connection:
       - keep-alive
       Pragma:
@@ -36,9 +36,9 @@ http_interactions:
       - max-age=15768000
     body:
       encoding: ASCII-8BIT
-      string: '{"ok":true,"result":{"short_name":"keka","author_name":"","author_url":"","auth_url":"https:\/\/edit.telegra.ph\/auth\/3u3V2GPcGO894an2kQlwOyZfZTuJY4z1xCXzgKKUyQ","page_count":41}}'
+      string: '{"ok":true,"result":{"short_name":"new name","author_name":"new author","author_url":"http:\/\/new-url.com\/","auth_url":"https:\/\/edit.telegra.ph\/auth\/gCClRPOaMv479Fq24REcJ7lKoqCeezRsbtN0gz915d","page_count":41}}'
     http_version: 
-  recorded_at: Wed, 18 Oct 2017 14:57:49 GMT
+  recorded_at: Wed, 18 Oct 2017 15:21:43 GMT
 - request:
     method: get
     uri: https://api.telegra.ph/editAccountInfo?access_token=a24dbcafbd49a962e4a7f5842410afdb07e49f0f7ac108a3c68146e75ca5&author_name=new%20author&author_url=http://new-url.com&short_name=new%20name
@@ -60,7 +60,7 @@ http_interactions:
       Server:
       - nginx/1.6.2
       Date:
-      - Wed, 18 Oct 2017 14:57:49 GMT
+      - Wed, 18 Oct 2017 15:21:43 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -77,5 +77,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"ok":true,"result":{"short_name":"new name","author_name":"new author","author_url":"http:\/\/new-url.com\/"}}'
     http_version: 
-  recorded_at: Wed, 18 Oct 2017 14:57:49 GMT
+  recorded_at: Wed, 18 Oct 2017 15:21:43 GMT
 recorded_with: VCR 3.0.3

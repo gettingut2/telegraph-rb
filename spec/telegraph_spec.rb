@@ -13,10 +13,10 @@ describe Telegraph, :vcr do
         )
       end
 
-      it { is_expected.to be_a Telegraph::Account }
-      its("short_name") { is_expected.to eq('test_name')}
-      its("author_name") { is_expected.to eq('test_author')}
-      its("author_url") { is_expected.to eq('http://author.com/')}
+      it { is_expected.to be_a Telegraph::Client }
+      its("account.short_name") { is_expected.to eq('test_name')}
+      its("account.author_name") { is_expected.to eq('test_author')}
+      its("account.author_url") { is_expected.to eq('http://author.com/')}
     end
 
     context 'short_name not given' do
@@ -28,13 +28,16 @@ describe Telegraph, :vcr do
         ) }
       end
 
-      it { is_expected.to raise_error(ArgumentError, "short_name can't be nil or blank") }
+      it { is_expected.to raise_error(ArgumentError, "SHORT_NAME_REQUIRED") }
     end
   end
 
   describe 'self.client' do
-    subject { Telegraph.client(token) }
+    subject { Telegraph.setup(token) }
 
-    its("account.short_name") { is_expected.to eq('keka')}
+    it 'creates telegraph client' do
+      expect(subject).to be_a Telegraph::Client
+    end
+    its("token") { is_expected.to eq(token)}
   end
 end

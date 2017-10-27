@@ -2,19 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.telegra.ph/createAccount?author_name=test_author&author_url=http://author.com&short_name=
+    uri: https://api.telegra.ph/createAccount?access_token=32b19f39673c57393e8527fe4d81a5d7a23ea338ac57e4a4e4193dd53c2e&author_name=test_author&author_url=http://author.com&short_name=
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.12.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
-      Host:
-      - api.telegra.ph
   response:
     status:
       code: 200
@@ -23,7 +21,7 @@ http_interactions:
       Server:
       - nginx/1.6.2
       Date:
-      - Sat, 09 Sep 2017 15:00:31 GMT
+      - Wed, 18 Oct 2017 14:20:08 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -40,5 +38,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"ok":false,"error":"SHORT_NAME_REQUIRED"}'
     http_version: 
-  recorded_at: Sat, 09 Sep 2017 15:00:31 GMT
+  recorded_at: Wed, 18 Oct 2017 14:20:08 GMT
 recorded_with: VCR 3.0.3

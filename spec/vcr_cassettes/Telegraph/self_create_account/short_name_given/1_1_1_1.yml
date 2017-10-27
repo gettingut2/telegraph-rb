@@ -7,14 +7,12 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.12.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
-      Host:
-      - api.telegra.ph
   response:
     status:
       code: 200
@@ -23,11 +21,11 @@ http_interactions:
       Server:
       - nginx/1.6.2
       Date:
-      - Sat, 09 Sep 2017 14:55:18 GMT
+      - Wed, 18 Oct 2017 14:20:06 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '221'
+      - '223'
       Connection:
       - keep-alive
       Pragma:
@@ -38,7 +36,7 @@ http_interactions:
       - max-age=15768000
     body:
       encoding: ASCII-8BIT
-      string: '{"ok":true,"result":{"short_name":"test_name","author_name":"test_author","author_url":"http:\/\/author.com\/","access_token":"50a7d7632ad2048073381786e3f088df937300ed7806d601c64fa893991b","auth_url":"https:\/\/edit.telegra.ph\/auth\/4bWggCw1UWjwH2venajlRZhuQzl3hRbl05zeI6gA0x"}}'
+      string: '{"ok":true,"result":{"short_name":"test_name","author_name":"test_author","author_url":"http:\/\/author.com\/","access_token":"811e4cc5afc8b940f671c986d761eb20d8f657d6d4cdd73beb609826ea18","auth_url":"https:\/\/edit.telegra.ph\/auth\/iAdQzAmCdTb9XbyvwoFn9dIOWHN6WUhess200pCdiM"}}'
     http_version: 
-  recorded_at: Sat, 09 Sep 2017 14:55:18 GMT
+  recorded_at: Wed, 18 Oct 2017 14:20:06 GMT
 recorded_with: VCR 3.0.3

@@ -1,6 +1,6 @@
 module Telegraph
   class Page
-    attr_reader :path, :url, :title, :description, :views, :can_edit, :author_name, :author_url
+    attr_reader :path, :url, :title, :description, :views, :can_edit, :author_name, :author_url, :content
 
     def initialize(attrs = {})
       @path = attrs['path']
