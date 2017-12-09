@@ -5,6 +5,6 @@ Gem::Specification.new do |s|
   s.summary     = "Telegraph Ruby Wrapper"
   s.description = "A simple wrapper for Telegraph API"
   s.authors     = ["Aleksey Kiselev"]
-  s.files       = ["lib/telegraph.rb"]
+  s.files       = `git ls-files`.split($\)
   s.license       = 'MIT'
 end
