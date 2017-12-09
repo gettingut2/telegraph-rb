@@ -1,6 +1,6 @@
 module Telegraph
   class Account
-    attr_reader :access_token, :short_name, :author_name, :auth_url, :author_url
+    attr_reader :access_token, :short_name, :author_name, :auth_url, :author_url, :page_count
 
     def initialize(attrs)
       @access_token = client.token

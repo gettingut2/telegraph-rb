@@ -1,4 +1,3 @@
-# See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
@@ -15,6 +14,7 @@ RSpec.configure do |config|
   require 'rspec/its'
   require 'webmock/rspec'
   require 'vcr'
+  require_relative '../lib/telegraph'
 
   WebMock.disable_net_connect!(allow_localhost: true)
 

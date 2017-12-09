@@ -11,6 +11,7 @@ module Telegraph
       @can_edit = attrs['can_edit']
       @author_name = attrs['author_name']
       @author_url = attrs['author_url']
+      @content = attrs['content']
     end
   end
 end

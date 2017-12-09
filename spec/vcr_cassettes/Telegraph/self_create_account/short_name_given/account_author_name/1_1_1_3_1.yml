@@ -1,14 +1,16 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://api.telegra.ph/createAccount?access_token=7fc3ea4137fab3836e43c3455bbd637da96e65dc17413242b02d86cb0a39&author_name=test_author&author_url=http://author.com&short_name=test_name
+    method: post
+    uri: https://api.telegra.ph/createAccount
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: '{"short_name":"test_name","author_name":"test_author","author_url":"http://author.com","access_token":"411d15f25e9d832904dc6a1a1def1c680e04fa7548075118418ab660b301"}'
     headers:
       User-Agent:
       - Faraday v0.12.1
+      Content-Type:
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,11 +23,11 @@ http_interactions:
       Server:
       - nginx/1.6.2
       Date:
-      - Wed, 18 Oct 2017 14:20:07 GMT
+      - Thu, 30 Nov 2017 12:34:44 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '222'
+      - '220'
       Connection:
       - keep-alive
       Pragma:
@@ -36,7 +38,7 @@ http_interactions:
       - max-age=15768000
     body:
       encoding: ASCII-8BIT
-      string: '{"ok":true,"result":{"short_name":"test_name","author_name":"test_author","author_url":"http:\/\/author.com\/","access_token":"7d604ec10532362c5c8b46ebfdcfb524285cad59b9e7a3e6b30872ab47ca","auth_url":"https:\/\/edit.telegra.ph\/auth\/tq6DbHNujUjfekB7wHHW4B71bWqS30JuoN8zvT3MLm"}}'
+      string: '{"ok":true,"result":{"short_name":"test_name","author_name":"test_author","author_url":"http:\/\/author.com\/","access_token":"8ebb24b6d94032488301db7c9550770f788327c42e8fc5ede73126600c5d","auth_url":"https:\/\/edit.telegra.ph\/auth\/liAyBsgI9zrZfhh92xz5zj8P9qnE1fBkx9Q6A6PHFe"}}'
     http_version: 
-  recorded_at: Wed, 18 Oct 2017 14:20:07 GMT
+  recorded_at: Thu, 30 Nov 2017 12:34:44 GMT
 recorded_with: VCR 3.0.3
