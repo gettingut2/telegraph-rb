@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name        = 'telegraph-ruby'
+  s.name        = 'telegraph-rb'
   s.version     = '0.0.1'
   s.date        = '2017-09-17'
   s.summary     = "Telegraph Ruby Wrapper"
