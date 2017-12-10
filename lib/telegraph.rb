@@ -1,6 +1,6 @@
 require 'faraday'
 require 'nokogiri'
-require 'JSON'
+require 'json'
 require 'singleton'
 require_relative 'telegraph/node_helper'
 require_relative 'telegraph/node_element'
