@@ -1,7 +1,7 @@
 require 'telegraph'
 
 describe Telegraph, :vcr do
-  let(:token) {'a24dbcafbd49a962e4a7f5842410afdb07e49f0f7ac108a3c68146e75ca5'}
+  let(:token) { ENV["TELEGRAPH_TOKEN"] }
 
   describe 'self.create_account' do
     context 'short_name given' do
